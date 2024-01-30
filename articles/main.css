@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.nav {
+    background: #32CD99;
+    padding: 10px;
+    width: 100%;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.x-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.nav a {
+    color: white;
+}
+
+.nav h1 {
+    margin-left: 25px;
+}
+
+.hero-container {
+    background: url('forest.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    padding: 130px;
+    color: white;
+    width: 100%;
+    backdrop-filter: blur(23px);
+    -webkit-backdrop-filter: blur(23px);
+    text-align: center;
+}
+
+.hero a {
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    width: 1000px;
+}
+
+.footer {
+    background: #B3B5BB;
+    padding: 10px;
+}
+
+div[space] {
+    margin-bottom: 25px;
+}
+
+img {
+    width: 300px;
+}
+
+ol {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+img {
+    display: flex;
+}
