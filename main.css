@@ -54,6 +54,17 @@ html, body {
 
 .hero a {
     color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer; 
+    transition: 500ms;
 }
 
 .article a h1 {
