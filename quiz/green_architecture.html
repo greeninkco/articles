@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='icon' href='favicon.ico'>
+    <link rel='shortcut icon' href='favicon.ico'>
+    <link rel='stylesheet' href='../articles/main.css'>
+
+    <title>Green Architecture Quiz | GreenInk</title>
+
+    <meta name="title" content="GreenInk — Articles for a Better Future" />
+    <meta name="description" content="GreenInk is helping replant forests, and so can you." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://greenink.today/"/>
+    <meta property="og:title" content="GreenInk — Articles for a Better Future" />
+    <meta property="og:description" content="GreenInk is helping replant forests, and so can you." />
+    <meta property="og:image" content="https://greenink.today/meta.jpg" />
+    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://greenink.today/" />
+    <meta property="twitter:title" content="GreenInk — Articles for a Better Future" />
+    <meta property="twitter:description" content="GreenInk is helping replant forests, and so can you." />
+    <meta property="twitter:image" content="https://greenink.today/meta.jpg" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0W05SDG2F"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-D0W05SDG2F');
+    </script>
+</head>
+<body>
+    <div class='nav'>
+        <h1>GreenInk</h1>
+
+        <div class='x-container'>
+            <div class='x'>
+                <a href='../articles.html'>
+                    Articles
+                </a>
+                &#x2022;
+                <a href='../index.html'>
+                    Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class='hero-container'>
+        <div class='hero'>
+            <h1>
+                Green Tech Quiz
+            </h1>
+            <span>
+                Take a 10 question quiz on "Green Architecture" by Brycen Weeks.
+            </span>
+        </div>
+    </div>
+
+    <div class='content-container'>
+        <div class='content'>
+            <div space></div>
+            <h1>Multiple Choice Quiz: Green Architecture</h1>
+            <div space></div>
+            <form id="quizForm" onsubmit="return false;">
+                <ol id="questionsList"></ol>
+                <br>
+                <button onclick="submitQuiz()">Submit Answers</button>
+                <div space></div>
+            </form>
+            <div space></div>
+            <div id='results'>
+                <h2>
+                    Results
+                </h2>
+                <p>
+                    Your results will appear here.
+                </p>
+            </div>
+            <div sapce></div>
+    </div>
+        </div>
+    <script>
+let questions = [
+    "Who is widely considered one of the greatest architects in our century?",
+    "What material is NOT typically used by green architects?",
+    "What percentage of worldwide emissions does concrete account for?",
+    "Which material can make steel almost carbon-free?",
+    "What percentage of carbon emissions worldwide do buildings and infrastructure contribute to?",
+    "What is the main function of solar panels?",
+    "When did Green Architecture start gaining prominence?",
+    "Which organization developed new guidelines for architects in the late 80s and early 90s?",
+    "Where is the Pixel Building located?",
+    "Which of the following is NOT an example of Green Architecture?"
+];
+
+let answerOptions = [
+    ["A) Frank Gehry", "B) Zaha Hadid", "C) Frank Lloyd Wright", "D) Rem Koolhaas"],
+    ["A) Ferrock", "B) Ashcrete", "C) Recycled plastic", "D) Concrete"],
+    ["A) 4%", "B) 8%", "C) 12%", "D) 16%"],
+    ["A) Hydrogen-infused iron", "B) Direct reduced iron", "C) Steel alloy", "D) Iron oxide"],
+    ["A) 30%", "B) 42%", "C) 51%", "D) 63%"],
+    ["A) To reflect sunlight", "B) To create an electrical charge", "C) To store wind energy", "D) To absorb water vapor"],
+    ["A) Early 2000s", "B) Late 90s", "C) Late 80s and early 90s", "D) Mid-70s"],
+    ["A) American Institute of Architects", "B) International Union of Architects", "C) United States Green Building Council", "D) Architecture for Humanity"],
+    ["A) Melbourne, Australia", "B) Copenhagen, Denmark", "C) Milan, Italy", "D) Singapore"],
+    ["A) The Pixel Building in Melbourne, Australia", "B) Copenhill in Copenhagen, Denmark", "C) The Vertical Forest in Milan, Italy", "D) PARKROYAL Collection Pickering in Singapore"]
+];
+
+let correctAnswers = [
+    "c", "d", "b", "b", "c", "b", "c", "a", "b", "b"
+];
+
+        // Function to dynamically generate questions and answer options
+        function generateQuestions() {
+            var questionsList = document.getElementById('questionsList');
+            for (var i = 0; i < questions.length; i++) {
+                var listItem = document.createElement('li');
+                listItem.innerHTML = "<p>" + questions[i] + "</p>";
+                
+                for (var j = 0; j < answerOptions[i].length; j++) {
+                    listItem.innerHTML += "<input type='radio' name='q" + (i + 1) + "' value='" + String.fromCharCode(97 + j) + "'>" + answerOptions[i][j] + "<br>";
+                }
+
+                questionsList.appendChild(listItem);
+            }
+        }
+
+        generateQuestions(); // Call the function to generate questions on page load
+
+        function submitQuiz() {
+            var totalQuestions = questions.length;
+            var userAnswers = [];
+
+            // Loop through each question to check answers and collect user responses
+            for (var i = 1; i <= totalQuestions; i++) {
+                var radios = document.getElementsByName('q' + i);
+                var answerSelected = false;
+
+                for (var j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        answerSelected = true;
+                        userAnswers.push(radios[j].value);
+                        break;
+                    }
+                }
+
+                if (!answerSelected) {
+                    alert("Please answer all questions.");
+                    return;
+                }
+            }
+
+            // Compare user answers with correct answers and display results
+            var correctAnswersCount = 0;
+            for (var k = 0; k < totalQuestions; k++) {
+                if (userAnswers[k] === correctAnswers[k]) {
+                    correctAnswersCount++;
+                }
+            }
+
+            // Display results
+            var resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = "<h2>Results:</h2>" +
+                "<p>You got " + correctAnswersCount + " out of " + totalQuestions + " questions correct.</p>";
+        }
+    </script>
+</body>
+</html>
