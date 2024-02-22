@@ -8,7 +8,7 @@
     <link rel='shortcut icon' href='favicon.ico'>
     <link rel='stylesheet' href='../articles/main.css'>
 
-    <title>Deforestation in the United States Quiz | GreenInk</title>
+    <title>Reducing Your Carbon Footprint Quiz | GreenInk</title>
 
     <meta name="title" content="GreenInk — Articles for a Better Future" />
     <meta name="description" content="GreenInk is helping replant forests, and so can you." />
@@ -57,7 +57,7 @@
                 Green Tech Quiz
             </h1>
             <span>
-                Take a 10 question quiz on "Deforestation in the United States" by Jonah Rawls.
+                Take a 10 question quiz on "Reducing Your Carbon Footprint" by Rae Schembra.
             </span>
         </div>
     </div>
@@ -65,7 +65,7 @@
     <div class='content-container'>
         <div class='content'>
             <div space></div>
-            <h1>Multiple Choice Quiz: Deforestation in the United States</h1>
+            <h1>Multiple Choice Quiz: Reducing Your Carbon Footprint</h1>
             <div space></div>
             <form id="quizForm" onsubmit="return false;">
                 <ol id="questionsList"></ol>
@@ -86,33 +86,44 @@
     </div>
         </div>
     <script>
-         let questions = [
-    "How much of the original trees in the United States has been lost since its founding?",
-    "Approximately how many acres of trees have been lost in the United States?",
-    "What is the annual rate of increase of trees in the US?",
-    "How has the loss of trees impacted animal species?",
-    "How much carbon dioxide has been released due to deforestation in the US?",
-    "What percentage of deforestation in the US is attributed to industrial logging?",
-    "Which of the following is NOT a primary factor of deforestation in the USA?",
-    "What is the total amount of greenhouse gases in the air as of 2021 due to deforestation?",
-    "What has been a consequence of losing trees in terms of oxygen?",
-    "What is a significant result of illegal logging and unsustainable practices?"
-]
+let questions = [
+  "What is a carbon footprint?",
+  "Why do we need to reduce our carbon footprint?",
+  "Which of the following is NOT a greenhouse gas?",
+  "What is one way to reduce your carbon footprint at home?",
+  "Which type of food consumption contributes to a higher carbon footprint?",
+  "What is one benefit of purchasing second-hand clothing?",
+  "What can you do to reduce your carbon footprint when it comes to purchasing items?",
+  "Which mode of transportation helps reduce your carbon footprint?",
+  "What is the primary aspect associated with climate change?",
+  "What percentage of greenhouse gases does meat consumption account for?"
+];
 
-answerOptions = [
-    ["A) 25%", "B) 50%", "C) 75%", "D) 100%"],
-    ["A) 500,000,000 acres", "B) 767,250,000 acres", "C) 1,023,000,000 acres", "D) 2,000,000,000 acres"],
-    ["A) 0.03%", "B) 0.5%", "C) 1%", "D) 5%"],
-    ["A) Increased biodiversity", "B) Expanded habitats", "C) Wiped out homes for many species", "D) Decreased competition"],
-    ["A) 1.5 million tons", "B) 1.5 billion tons", "C) 15 billion tons", "D) 150 million tons"],
-    ["A) 15%", "B) 31%", "C) 50%", "D) 75%"],
-    ["A) Expansion of croplands", "B) Logging and timber industries", "C) Urbanization and infrastructure development", "D) Natural disasters and wildfires"],
-    ["A) 14 million pounds", "B) 14 billion pounds", "C) 14 trillion pounds", "D) 140 trillion pounds"],
-    ["A) Decreased oxygen levels", "B) Increased oxygen levels", "C) No change in oxygen levels", "D) Oxygen levels remain stable"],
-    ["A) Increased forest regeneration", "B) Preservation of biodiversity", "C) Accelerated deforestation", "D) Reduction of carbon emissions"]
-]
+let answerOptions = [
+  ["a) the amount of greenhouse gasses produced by our actions", "b) the size of your feet", "c) the amount of carbon in the air", "d) the weight of carbon dioxide"],
+  ["a) it is the primary aspect associated with climate change", "b) it makes the air smell bad", "c) it is too expensive", "d) it affects local economies"],
+  ["a) carbon dioxide", "b) methane", "c) nitrous oxide", "d) water vapor"],
+  ["a) frequently shut off electricity and air conditioning", "b) leave lights on all the time", "c) buy more electronics", "d) keep windows open in winter"],
+  ["a) fruits and vegetables", "b) grains and legumes", "c) meat and dairy products", "d) processed foods"],
+  ["a) reduces clothing waste in landfills", "b) more expensive than new clothing", "c) no benefits", "d) not fashionable"],
+  ["a) purchase less items and reuse or recycle", "b) throw everything away", "c) buy new items regularly", "d) never recycle"],
+  ["a) driving a car", "b) riding a bike", "c) taking a plane", "d) walking"],
+  ["a) global warming", "b) economic growth", "c) social media", "d) technological advancement"],
+  ["a) up to 14.5%", "b) less than 5%", "c) over 50%", "d) exactly 25%"]
+];
+let correctAnswers = [
+  "a",
+  "a",
+  "d",
+  "a",
+  "c",
+  "a",
+  "a",
+  "b",
+  "a",
+  "a"
+];
 
-correctAnswers = ["c", "b", "a", "c", "b", "b", "d", "c", "a", "c"]
 
         // Function to dynamically generate questions and answer options
         function generateQuestions() {
