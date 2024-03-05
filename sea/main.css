@@ -117,6 +117,18 @@ button {
     border-radius: 15px;
 }
 
+#sea {
+    background: url('sea.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    text-shadow: 3px 4px 2px black;
+    box-shadow: rgba(98, 171, 55, 0.4) 5px 5px, rgba(98, 171, 55, 0.3) 10px 10px, rgba(98, 171, 55, 0.2) 15px 15px, rgba(98, 171, 55, 0.1) 20px 20px, rgba(98, 171, 55  , 0.05) 25px 25px;
+    font-size: 25px;
+}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
